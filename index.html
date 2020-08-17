@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>Card Verification</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"   integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src='main.js'></script>
+    <script src='cardType.js'></script>
+</head>
+<body>
+
+    <div class="card-form">
+        <img class="card-img back" src="back-card.png" alt="back card" />
+        <img class="card-img front" src="card.png" alt="card" />
+        <canvas id="card-canvas"></canvas>
+        <input id="card-number" class="card-input cardnumber" placeholder="Numéro de la carte" onkeydown="limit(this, 16);" onkeyup="limit(this, 16);" /> </br>
+        <input id="card-name" class="card-input" placeholder="Nom Prénom" />
+        <input id="card-cvv" class="card-input" placeholder="CVV" onkeydown="limit(this, 3);" onkeyup="limit(this, 3);"> </br>
+        <div class="card-expiration">
+            <span class="card-expiration-text">Cette carte expire le:</span>
+            <select id="mouth" onchange="getValOfSelectMouthInput(this);">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            /
+            <select id="year" onchange="getValOfSelectYearInput(this);">
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select>
+        </div>
+
+        <button class="submit-card-button" type="submit">Payer <i class="fas fa-lock"></i></button>
+    </div>
+    
+</body>
+</html>
